@@ -71,7 +71,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
@@ -91,7 +90,7 @@ export default function DisplayMenu() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} style={{ background: '#5233FF' }}>
+      <AppBar position="fixed" open={open} style={{ background: '#20B2AA' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -119,20 +118,19 @@ export default function DisplayMenu() {
         variant="persistent"
         anchor="left"
         open={open}
-        
       >
-        <DrawerHeader>
+        <DrawerHeader style={{ background: '#20B2AA' }}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         
-        <List >
+        <List style={{ background: '#20B2AA' }}>
         <ListItem >
              
             <Link href="/leagues" underline="none">
               <ListItemText primary={
-                     <Typography variant="h6" component="div" color="black">
+                     <Typography variant="h6" component="div" color="white">
                      LEAGUES
                    </Typography>
                  } />
@@ -143,7 +141,7 @@ export default function DisplayMenu() {
             <ListItem >
         <Link href="/teams" underline="none">
                  <ListItemText primary={
-                     <Typography variant="h6" component="div" color="black">
+                     <Typography variant="h6" component="div" color="white">
                      TEAMS
                    </Typography>
                  } />
@@ -153,16 +151,10 @@ export default function DisplayMenu() {
            
             <Divider />
         <ListItem >
-             
-             
                <DisplayVideoGames/>
-            
              </ListItem>
         </List>
-        
-       
       </Drawer>
-
       <Main open={open} >
         <DrawerHeader />
     <Router>

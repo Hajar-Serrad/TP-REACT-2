@@ -35,11 +35,11 @@ class DisplayTeams extends Component {
         
         fetch('https://api.pandascore.co/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
-        .then(response => {console.log(response); this.setState({teams:response});})
+        .then(response => this.setState({teams:response}))
         .catch(err => console.error(err));
 
         fetch('https://api.pandascore.co/teams', this.state.options)
-        .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
+        .then(response => this.setState({nbrL:response.headers.get('X-Total')}))
         .catch(err => console.error(err));
 
     } 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DisplayLeague from "./displayLeague";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -35,7 +34,7 @@ class Teams extends Component {
       console.log(this.props);
         fetch('https://api.pandascore.co/videogames/'+this.props.id+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
-        .then(response => {console.log(response); this.setState({teams:response});})
+        .then(response => this.setState({teams:response}))
         .catch(err => console.error(err));
 
         fetch('https://api.pandascore.co/videogames/'+this.props.id+'/teams', this.state.options)
@@ -54,7 +53,6 @@ class Teams extends Component {
     }
      render() {
          const count=Math.ceil(this.state.nbrL / this.state.LPerPage);
-         console.log(this.state.teams);
         return(
             <Container maxWidth="xs">
             <Typography variant="h5">

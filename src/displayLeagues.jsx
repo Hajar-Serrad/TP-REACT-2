@@ -39,7 +39,7 @@ class DisplayLeagues extends Component {
         
         fetch('https://api.pandascore.co/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
-        .then(response => {console.log(response); this.setState({leagues:response});})
+        .then(response => this.setState({leagues:response}))
         .catch(err => console.error(err));
 
         fetch('https://api.pandascore.co/leagues', this.state.options)

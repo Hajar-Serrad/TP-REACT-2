@@ -4,10 +4,6 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import List from '@mui/material/List';
-import { Typography } from '@material-ui/core';
-import Container from '@mui/material/Container';
-import Pagination from '@mui/material/Pagination';
 import DropDownVideoGames from './dropDownVideoGames';
 
 

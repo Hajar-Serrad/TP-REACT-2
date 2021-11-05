@@ -48,7 +48,7 @@ export default function DropDownVideoGames(props) {
       <ButtonGroup variant="text" ref={anchorRef} aria-label="split button">
      
       
-       <Button onClick={handleClick}><Typography variant="h6" component="div" color="black" underline="none">
+       <Button onClick={handleClick}><Typography variant="h6" component="div" color="white" underline="none">
         {props.games[selectedIndex] && props.games[selectedIndex].name}
                    </Typography></Button>
       
