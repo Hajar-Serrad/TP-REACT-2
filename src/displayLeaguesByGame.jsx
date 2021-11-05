@@ -34,12 +34,12 @@ class DisplayLeaguesByGame extends Component {
 
     componentDidMount= () => {
       console.log(this.props);
-        fetch('https://api.pandascore.co/videogames/'+this.props.id+'/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch('https://tp-react-2-6yahedvf3-hajar-2.vercel.app/api/videogames/'+this.props.id+'/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => {console.log(response); this.setState({leagues:response});})
         .catch(err => console.error(err));
 
-        fetch('https://api.pandascore.co/videogames/'+this.props.id+'/leagues', this.state.options)
+        fetch('https://tp-react-2-6yahedvf3-hajar-2.vercel.app/api/'+this.props.id+'/leagues', this.state.options)
         .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
         .catch(err => console.error(err));
 

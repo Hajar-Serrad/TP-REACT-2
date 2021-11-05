@@ -24,7 +24,7 @@ class DisplayTeamDetail extends Component {
     players:[],
   };
 componentDidMount= () => {
-    fetch('https://api.pandascore.co/teams/'+this.props.match.params.teamId,this.state.options)
+    fetch('https://tp-react-2-6yahedvf3-hajar-2.vercel.app/api/teams/'+this.props.match.params.teamId,this.state.options)
     .then(response =>  response.json())
     .then(res => this.setState({team:res,videogame:res.current_videogame,players:res.players})) 
     .catch(err => console.error(err));
