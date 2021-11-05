@@ -29,7 +29,7 @@ const DisplayVideoGames =()=> {
 
     
     React.useEffect(() => {
-      fetch('https://tp-react-2-6yahedvf3-hajar-2.vercel.app/api/videogames?page=1&per_page=50', options)
+      fetch('https://api.pandascore.co/videogames?page=1&per_page=50', options)
         .then(response =>  response.json())
         .then(response => setGames(response))
         .catch(err => console.error(err));
