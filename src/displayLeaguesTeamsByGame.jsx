@@ -1,7 +1,5 @@
 import React from 'react';
 import DisplayLeaguesByGame from './displayLeaguesByGame';
-import DisplayTeamsByGame from './displayTeamsByGame';
-import { Grid } from '@mui/material';
 
 const DisplayLeaguesTeamsByGame =(props)=>{
     const id=props.match.params.videgameId;

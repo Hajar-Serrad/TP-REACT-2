@@ -33,7 +33,6 @@ class DisplayLeaguesByGame extends Component {
     };
 
     componentDidMount= () => {
-      console.log(this.props);
         fetch('https://api.pandascore.co/videogames/'+this.props.id+'/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response =>  this.setState({leagues:response}))
@@ -57,7 +56,7 @@ class DisplayLeaguesByGame extends Component {
         return(
             <Container maxWidth="xs">
             <Typography variant="h5">
-             <h3>Leagues</h3>
+             Leagues
              </Typography>
              <Typography variant="h4" component="h2">
              <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
