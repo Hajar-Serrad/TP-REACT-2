@@ -26,7 +26,7 @@ class DetailsLeague extends Component {
   };
 
   componentDidMount= () => {
-    fetch(process.env.REACT_APP_CLE_API_LEAGUES+this.props.match.params.leagueId,this.state.options)
+    fetch(process.env.REACT_APP_CLE_API_LEAGUES+'/'+this.props.match.params.leagueId,this.state.options)
     .then(response =>  response.json())
     .then(res => this.setState({league:res,videogame:res.videogame,series:res.series}) )
     .catch(err => console.error(err));
