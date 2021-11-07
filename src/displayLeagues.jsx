@@ -37,7 +37,7 @@ class DisplayLeagues extends Component {
 
     componentDidMount= () => {
         
-        fetch(process.env.REACT_APP_CLE_API_LEAGUES+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_LEAGUES+'?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({leagues:response}))
         .catch(err => console.error(err));

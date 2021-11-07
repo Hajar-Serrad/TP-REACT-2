@@ -32,7 +32,7 @@ class DisplayTeams extends Component {
     
     componentDidMount= () => {
         
-        fetch(process.env.REACT_APP_CLE_API_TEAMS+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_TEAMS+'?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({teams:response}))
         .catch(err => console.error(err));
