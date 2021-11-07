@@ -38,7 +38,7 @@ class DisplayLeaguesByGame extends Component {
         .then(response =>  this.setState({leagues:response}))
         .catch(err => console.error(err));
 
-        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+this.props.id+'/leagues', this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/leagues', this.state.options)
         .then(response => this.setState({nbrL:response.headers.get('X-Total')}))
         .catch(err => console.error(err));
 

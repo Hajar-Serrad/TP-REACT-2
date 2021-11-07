@@ -32,12 +32,12 @@ class Teams extends Component {
     
     componentDidMount= () => {
       console.log(this.props);
-        fetch('https://api.pandascore.co/videogames/'+this.props.id+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({teams:response}))
         .catch(err => console.error(err));
 
-        fetch('https://api.pandascore.co/videogames/'+this.props.id+'/teams', this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/teams', this.state.options)
         .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
         .catch(err => console.error(err));
 
