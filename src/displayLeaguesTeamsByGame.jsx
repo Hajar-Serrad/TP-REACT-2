@@ -1,10 +1,13 @@
 import React from 'react';
 import DisplayLeaguesByGame from './displayLeaguesByGame';
+import DisplayTeamsByGame from './displayTeamsByGame';
+import { Grid } from '@mui/material';
 
 const DisplayLeaguesTeamsByGame =(props)=>{
     const id=props.match.params.videgameId;
+    console.log(props.match.params);
     return(
-       /*
+       
         <Grid container spacing={2} columns={16}>
   <Grid item xs={8}>
     <DisplayLeaguesByGame id={id}/>
@@ -14,8 +17,8 @@ const DisplayLeaguesTeamsByGame =(props)=>{
    <DisplayTeamsByGame id={id}/>
   </Grid>
 </Grid>
-        */
-<DisplayLeaguesByGame id={id}/>
+        
+       // <DisplayLeaguesByGame id={id}/>
     );
 }
 

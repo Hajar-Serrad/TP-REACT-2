@@ -10,7 +10,7 @@ import Pagination from '@mui/material/Pagination';
 import DisplayTeam from './displayTeam';
 
 
-class Teams extends Component {
+class DisplayTeamsByGame extends Component {
 
     state={
 
@@ -26,22 +26,39 @@ class Teams extends Component {
     currentPage: 1,
     LPerPage: 8,
     nbrL:0,
+    game:{"CS:GO":"csgo","CALL OF DUTY":"codmw","DOTA 2":"dota2","FIFA":"fifa","LEAGUE OF LEGENDS":"lol","OVERWATCH":"ow","PUBG":"pubg","RAINBOW SIX SIEGE":"r6siege","ROCKET LEAGUE":"rl","VALORANT":"valorant","KING OF GLORY":"kog","LOL WILD RIFT":"lol-wild-rift"},
 
     };
+
+    fetching=(name)=>{
+      fetch('https://api.pandascore.co/'+this.state.game[name.toUpperCase()]+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+             .then(response =>  response.json())
+             .then(response => {console.log(response); this.setState({teams:response});})
+             .catch(err => console.error(err));
+     
+            fetch('https://api.pandascore.co/'+this.state.game[name.toUpperCase()]+'/teams', this.state.options)
+             .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
+             .catch(err => console.error(err));
+         }
 
     
     componentDidMount= () => {
       console.log(this.props);
-        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
-        .then(response =>  response.json())
-        .then(response => this.setState({teams:response}))
-        .catch(err => console.error(err));
+      fetch('https://api.pandascore.co/videogames/'+this.props.id, this.state.options)
+      .then(response => response.json())
+      .then(response => {console.log("------------------"); console.log(response); if(response.name)
+      {
+        this.fetching(response.name);
+      }})
+      .catch(err => console.error(err));
+      console.log("1111111111111111111");
+console.log(this.state.game);
 
-        fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/teams', this.state.options)
-        .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
-        .catch(err => console.error(err));
+
 
     } 
+
+    
     
 
     handleClick=(event,value)=> {
@@ -55,8 +72,8 @@ class Teams extends Component {
          const count=Math.ceil(this.state.nbrL / this.state.LPerPage);
         return(
             <Container maxWidth="xs">
-            <Typography variant="h5">
-             <h3>Teams</h3>
+            <Typography variant="h5" >
+             Teams
              </Typography>
              <Typography variant="h4" component="h2">
              <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
@@ -68,4 +85,4 @@ class Teams extends Component {
         )};
 }
 
-export default Teams;
+export default DisplayTeamsByGame;
