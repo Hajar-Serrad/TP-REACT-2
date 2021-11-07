@@ -24,7 +24,7 @@ class DisplayTeamsByGame extends Component {
         }
       },
     currentPage: 1,
-    LPerPage: 3,
+    LPerPage: 4,
     nbrL:0,
     game:{"CS:GO":"csgo","CALL OF DUTY":"codmw","DOTA 2":"dota2","FIFA":"fifa","LEAGUE OF LEGENDS":"lol","OVERWATCH":"ow","PUBG":"pubg","RAINBOW SIX SIEGE":"r6siege","ROCKET LEAGUE":"rl","VALORANT":"valorant","KING OF GLORY":"kog","LOL WILD RIFT":"lol-wild-rift"},
 
@@ -33,21 +33,27 @@ class DisplayTeamsByGame extends Component {
     fetching=(name)=>{
       fetch(process.env.REACT_APP_CLE_API+this.state.game[name.toUpperCase()]+'/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
              .then(response =>  response.json())
-             .then(response => this.setState({teams:response}))
+             .then(response => {this.setState({teams:response});})
              .catch(err => console.error(err));
      
             fetch(process.env.REACT_APP_CLE_API+this.state.game[name.toUpperCase()]+'/teams', this.state.options)
-             .then(response => this.setState({nbrL:response.headers.get('X-Total')}))
+             .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
              .catch(err => console.error(err));
-    }
+         }
 
     
     componentDidMount= () => {
       console.log(this.props);
       fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id, this.state.options)
       .then(response => response.json())
-      .then(response => { if(response.name) this.fetching(response.name); })
+      .then(response => {if(response.name)
+      {
+        this.fetching(response.name);
+      }})
       .catch(err => console.error(err));
+
+
+
     } 
 
     

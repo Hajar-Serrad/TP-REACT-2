@@ -41,7 +41,7 @@ export default function DropDownVideoGames(props) {
 
     setOpen(false);
   };
-  const link="/videogames/"+(props.games[selectedIndex] && props.games[selectedIndex].id)+"/LeaguesTeams";
+  const link="/videogames/"+(props.games[selectedIndex] && props.games[selectedIndex].id)+"/Leagues&Teams";
   console.log(props);
   return (
     <Router>

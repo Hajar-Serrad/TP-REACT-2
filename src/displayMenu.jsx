@@ -168,7 +168,7 @@ export default function DisplayMenu() {
         <DisplayTeams/>
       </Route> 
       <Route exact path="/teams/:teamId" component={DisplayTeamDetail}/>
-      <Route exact path="/videogames/:videgameId/LeaguesTeams" component={DisplayLeaguesTeamsByGame}/>
+      <Route exact path="/videogames/:videgameId/Leagues&Teams" component={DisplayLeaguesTeamsByGame}/>
       <Route>
         <Error/>
       </Route>
