@@ -24,7 +24,7 @@ class DisplayTeamDetail extends Component {
     players:[],
   };
 componentDidMount= () => {
-    fetch('https://api.pandascore.co/teams/'+this.props.match.params.teamId,this.state.options)
+    fetch(process.env.REACT_APP_CLE_API_TEAMS+this.props.match.params.teamId,this.state.options)
     .then(response =>  response.json())
     .then(res => this.setState({team:res,videogame:res.current_videogame,players:res.players})) 
     .catch(err => console.error(err));

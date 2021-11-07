@@ -32,12 +32,12 @@ class DisplayTeams extends Component {
     
     componentDidMount= () => {
         
-        fetch('https://api.pandascore.co/teams?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_TEAMS+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({teams:response}))
         .catch(err => console.error(err));
 
-        fetch('https://api.pandascore.co/teams', this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_TEAMS, this.state.options)
         .then(response => this.setState({nbrL:response.headers.get('X-Total')}))
         .catch(err => console.error(err));
 
@@ -56,7 +56,7 @@ class DisplayTeams extends Component {
         return(
             <Container maxWidth="xs">
             <Typography variant="h5">
-             <h3>Teams</h3>
+             Teams
              </Typography>
              <Typography variant="h4" component="h2">
              <List sx={{ width: '100%', bgcolor: 'background.paper' }}>

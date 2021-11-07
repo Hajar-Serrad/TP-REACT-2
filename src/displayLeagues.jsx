@@ -37,12 +37,12 @@ class DisplayLeagues extends Component {
 
     componentDidMount= () => {
         
-        fetch('https://tp-react-2.vercel.app/api/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_LEAGUES+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({leagues:response}))
         .catch(err => console.error(err));
 
-        fetch('https://tp-react-2.vercel.app/api/leagues', this.state.options)
+        fetch(process.env.REACT_APP_CLE_API_LEAGUES, this.state.options)
         .then(response => { this.setState({nbrL:response.headers.get('X-Total')}); })
         .catch(err => console.error(err));
 
@@ -60,7 +60,7 @@ class DisplayLeagues extends Component {
         return(
             <Container maxWidth="xs">
             <Typography variant="h5">
-             <h3>Leagues</h3>
+             Leagues
              </Typography>
              <Typography variant="h4" component="h2">
              <List sx={{ width: '100%', bgcolor: 'background.paper' }}>

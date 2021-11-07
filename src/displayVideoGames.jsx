@@ -27,7 +27,7 @@ class DisplayVideoGames extends Component {
 
     
     componentDidMount=()=>{
-      fetch('https://api.pandascore.co/videogames?page=1&per_page=50', this.state.options)
+      fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'?page=1&per_page=50', this.state.options)
         .then(response =>  response.json())
         .then(response => this.setState({games:response}))
         .catch(err => console.error(err));
