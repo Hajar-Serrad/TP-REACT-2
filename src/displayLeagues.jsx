@@ -26,6 +26,7 @@ class DisplayLeagues extends Component {
       headers: {
         Accept: 'application/json',
         Authorization: 'Bearer s9meduriHoDdn9OAY6YzwDFAxHgcwvJ8aG7Cc4fHNXUGzRmUoaM',
+        
 
       }
     },

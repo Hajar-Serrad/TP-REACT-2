@@ -19,6 +19,9 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  
+  "proxy": "https://localhoast:3000",
+  "proxy": "https://tp-react-2.vercel.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
