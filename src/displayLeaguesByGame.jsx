@@ -33,7 +33,6 @@ class DisplayLeaguesByGame extends Component {
     };
     
     componentDidMount= () => {
-      console.log(this.props);
         fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id+'/leagues?sort=&page='+this.state.currentPage+'&per_page='+this.state.LPerPage, this.state.options)
         .then(response =>  response.json())
         .then(response =>  this.setState({leagues:response}))

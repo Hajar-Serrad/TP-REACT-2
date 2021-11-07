@@ -43,7 +43,6 @@ class DisplayTeamsByGame extends Component {
 
     
     componentDidMount= () => {
-      console.log(this.props);
       fetch(process.env.REACT_APP_CLE_API_VIDEOGAMES+'/'+this.props.id, this.state.options)
       .then(response => response.json())
       .then(response => {if(response.name)

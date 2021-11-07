@@ -35,7 +35,7 @@ class DisplayVideoGames extends Component {
    
      
       render(){
-        console.log(this.state.games);
+        
         return(
           <DropDownVideoGames games={this.state.games} />
         )};
