@@ -24,7 +24,7 @@ class DisplayTeamsByGame extends Component {
         }
       },
     currentPage: 1,
-    LPerPage: 4,
+    LPerPage: 3,
     nbrL:0,
     game:{"CS:GO":"csgo","CALL OF DUTY":"codmw","DOTA 2":"dota2","FIFA":"fifa","LEAGUE OF LEGENDS":"lol","OVERWATCH":"ow","PUBG":"pubg","RAINBOW SIX SIEGE":"r6siege","ROCKET LEAGUE":"rl","VALORANT":"valorant","KING OF GLORY":"kog","LOL WILD RIFT":"lol-wild-rift"},
 

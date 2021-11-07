@@ -4,7 +4,7 @@ import DisplayTeamsByGame from './displayTeamsByGame';
 import { Grid } from '@mui/material';
 
 const DisplayLeaguesTeamsByGame =(props)=>{
-    const id=props.match.params.videgameId;
+    const id=props.match.params.videogameId;
     console.log(props.match.params);
     return(
        
