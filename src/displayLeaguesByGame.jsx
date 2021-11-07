@@ -27,7 +27,7 @@ class DisplayLeaguesByGame extends Component {
       }
     },
     currentPage: 1,
-    LPerPage: 6,
+    LPerPage: 3,
     nbrL:0,
 
     };

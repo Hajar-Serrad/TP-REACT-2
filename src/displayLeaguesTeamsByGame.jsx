@@ -17,8 +17,6 @@ const DisplayLeaguesTeamsByGame =(props)=>{
    <DisplayTeamsByGame id={id}/>
   </Grid>
 </Grid>
-        
-       // <DisplayLeaguesByGame id={id}/>
     );
 }
 
